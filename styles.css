@@ -1,0 +1,126 @@
+/* Sayfanın genel stil ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg'); /* Orman fotoğrafı */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* Sayfa içeriği kutusu */
+.content-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Hafif beyaz, şeffaf arka plan */
+    width: 80%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px); /* Arka planı bulanıklaştır */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 2s ease-out forwards;
+}
+
+/* Content box hover animasyonu */
+.content-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Başlık (Hello World) */
+h1 {
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-size: 48px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 3s ease-out;
+}
+
+/* "Hello World" yazısının animasyonu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Alt başlık ve açıklama */
+p {
+    color: #34495e;
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeInText 2s 1s forwards;
+}
+
+/* Açıklama metninin animasyonu */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buton */
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    animation: bounce 2s infinite; /* Buton hareketi */
+    margin-top: 20px;
+}
+
+/* Buton Hover */
+.btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buton animasyonu */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .content-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
